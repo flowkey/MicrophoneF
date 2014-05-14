@@ -34,6 +34,7 @@ _.extend(MicrophoneF.prototype, {
     },
     initialize: function(options) {
         var self = this;
+        if (!swfobject.hasFlashPlayerVersion("10.0.0")) return;
         if (self.flash) return;
 
         options = options || {};
