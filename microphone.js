@@ -117,7 +117,10 @@ _.extend(MicrophoneF.prototype, {
 
 // Loader gets  an flash DOM OBJECT and an EmbedCallback
 function defaultLoader(flash, embedCallback) {
-    document.body.appendChild(flash);
+    if (swfobject.hasFlashPlayerVersion("10.0.0")) {
+        document.body.appendChild(flash);
+    }
+
     embedCallback();
 };
 
