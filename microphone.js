@@ -63,10 +63,16 @@ _.extend(MicrophoneF.prototype, {
             function(e) {
                 MicrophoneF.log("Embed " +
                     (e.success ? "succeeded" : "failed"));
-                setTimeout(function() {
-                    MicrophoneF.flash.__enable()
-                }, 1000)
+                if (e.success) {
+                    setTimeout(function() {
+                        MicrophoneF.flash.__enable()
+                    }, 1000)
+                }
 
+
+                if (!e.success) {
+                    jQuery("#__microphoneFFlash__").remove();
+                }
 
             }
         );
@@ -117,11 +123,11 @@ _.extend(MicrophoneF.prototype, {
 
 // Loader gets  an flash DOM OBJECT and an EmbedCallback
 function defaultLoader(flash, embedCallback) {
-    if (swfobject.hasFlashPlayerVersion("10.0.0")) {
-        document.body.appendChild(flash);
-    }
 
+    document.body.appendChild(flash);
     embedCallback();
+
+
 };
 
 
