@@ -1,8 +1,11 @@
 Package.describe({
-    summary: "a js wrapper to get Microphone input from user trough flash."
+    summary: "a js wrapper to get Microphone input from user through flash.",
+    git: "https://github.com/flowkey/MicrophoneF.git",
+    version: "0.1.0",
+    name: "flowkey:flashmic"
 });
 
-Package.on_use(function(api, where) {
+Package.onUse(function(api, where) {
     var path = Npm.require('path');
     api.use(['less', 'underscore'], 'client');
 
@@ -12,8 +15,3 @@ Package.on_use(function(api, where) {
     if (api.export)
         api.export(['MicrophoneF']);
 });
-
-// Package.on_test(function(api) {
-//     api.use(['underscore', 'ejson', 'deps', 'settings-manager', 'ui', 'tinytest', 'test-helpers']);
-//     api.add_files(['tests/basictests.js'], 'client');
-// })
