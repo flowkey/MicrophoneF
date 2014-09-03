@@ -6,8 +6,11 @@ Package.describe({
 });
 
 Package.onUse(function(api, where) {
+    api.versionsFrom('METEOR-CORE@0.9.0');
+
     var path = Npm.require('path');
-    api.use(['less', 'underscore'], 'client');
+    api.use('less@1.0.0', 'client');
+    api.use('underscore@1.0.0', 'client');
 
     // api.add_files(path.join('MicrophoneMain.swf'), 'client'); // not wokring this way but it should :(
     api.add_files(['swfobject.js', 'microphone.js', 'flashObj.less'], 'client');
