@@ -6,8 +6,6 @@ Package.describe({
 });
 
 Package.onUse(function(api, where) {
-    api.versionsFrom('METEOR-CORE@0.9.0');
-
     var path = Npm.require('path');
     api.use('less@1.0.0', 'client');
     api.use('underscore@1.0.0', 'client');
