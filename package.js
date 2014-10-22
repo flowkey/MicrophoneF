@@ -1,13 +1,13 @@
 Package.describe({
     summary: "a js wrapper to get Microphone input from user trough flash.",
-    version: "0.1.1",
+    version: "0.1.2",
     name: "flowkey:flashmic",
-    git: "/* PUBLIC */",
+    git: "https://github.com/flowkey/MicrophoneF.git",
 });
 
 Package.on_use(function(api, where) {
-    var path = Npm.require('path');
-    api.use(['less', 'underscore', 'flowkey:swfobject', 'jquery'], 'client');
+    api.versionsFrom(['METEOR@0.9.0', 'METEOR@0.9.4'])
+    api.use(['less', 'underscore', 'flowkey:swfobject@1.0.0', 'jquery'], 'client');
 
     // api.add_files(path.join('MicrophoneMain.swf'), 'client'); // not working this way but it should :(
     api.add_files(['lib/microphone.js', 'style/flashObj.less'], 'client');
