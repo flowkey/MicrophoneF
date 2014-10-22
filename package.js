@@ -7,7 +7,7 @@ Package.describe({
 
 Package.on_use(function(api, where) {
     var path = Npm.require('path');
-    api.use(['less', 'underscore', 'flowkey:swfobject'], 'client');
+    api.use(['less', 'underscore', 'flowkey:swfobject', 'jquery'], 'client');
 
     // api.add_files(path.join('MicrophoneMain.swf'), 'client'); // not working this way but it should :(
     api.add_files(['lib/microphone.js', 'style/flashObj.less'], 'client');

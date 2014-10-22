@@ -1,8 +1,30 @@
+body.hide__microphoneFFlash__{
+	#__microphoneFFlash__{
+		z-index: -10;
+	}
+}
+
 #__microphoneFFlash__{
-position: absolute;
-right: 0;
-top: 0;
-z-index: 10000;
-height: 300px;
-width: 300px;
+	position: absolute;
+	right: 0px;
+	left: 0;
+	margin: auto;
+	top: 230px;
+	z-index: 10000;
+	height: 146px;
+	width: 220px;
+	opacity: 1;
+	border: 3px solid #eb7f00;
+
+	&:before{
+		content: " ";
+		display: block;
+		background-color: red;
+		height: 100px;
+		width: 100px;
+		position: absolute;
+		left: -100px;
+		top: -200px;
+		
+	}
 }
